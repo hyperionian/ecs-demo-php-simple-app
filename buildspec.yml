@@ -13,7 +13,7 @@ phases:
     commands:
       - docker push "$IMAGE_URI"
       - printf '[{"name":"simple-app","imageUri":"%s"}]' "$IMAGE_URI" > images.json
-      - printf 'echo "$(sudo /usr/local/sbin/kubectl set image deployment/website1 website1=%s)" &>> /var/log/kops.log' "$IMAGE_URI" > redeploy.sh    
+      - printf 'echo "$(sudo /usr/local/sbin/kubectl set image deployment/website1 website1=%s)" &>> /var/log/kops.log' "$IMAGE_URI" > redeploy.sh   
 artifacts:
   files: 
   - images.json
